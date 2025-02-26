@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+    
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-2xl font-bold mb-5">Universal Framework to Benchmark Cryptographic Algorithms</h1>
+        <p>In today's digital world, security is everything. Cryptographic algorithms help protect our data, but how do we know which one is the best for different situations? This framework provides a way to test and compare various encryption and decryption algorithms based on different factors like performance, strength, and efficiency. Whether it's AES, RSA, or SHA, this tool helps analyze them across different media types and processors, making it easier to choose the right one for your needs.</p>
+        <!-- Encryption & Decryption Algorithms -->
+        <h2 class="text-lg font-semibold mb-4 pt-4">Encryption & Decryption Algorithms</h2>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+            <a href="algorithms/aes.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">AES-128</a>
+            <a href="algorithms/chacha.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">ChaCha20</a>
+            <a href="algorithms/rsa.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">RSA</a>
+            <a href="algorithms/ecc.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">ECC</a>
+            <a href="algorithms/sha256.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">SHA-256</a>
+            <a href="algorithms/sha3.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">SHA-3</a>
+        </div>
+        
+        <!-- Benchmark Sections -->
+        <h2 class="text-lg font-semibold mb-4">Benchmark Categories</h2>
+        <div class="space-y-4">
+            <a href="benchmarksections/media_types.html" class="block p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">Benchmark Based on Media Types</a>
+            <a href="benchmarksections/processors.html" class="block p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">Benchmark Based on Processors</a>
+            <a href="benchmarksections/strength.html" class="block p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">Benchmark Based on Strength</a>
+        </div>
+    </div>
+</body>
+</html>
