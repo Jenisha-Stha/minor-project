@@ -6,16 +6,34 @@
     <title>Benchmarking UI</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4">
-        <h1 class="text-2xl font-bold mb-4 text-center">Benchmarking Based on Processor</h1>
-        <div class="grid grid-cols-3 gap-4 text-center">
-            <a href="../bench_processor/Aes.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">AES-128</a>
-            <a href="../bench_processor/Chacha.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">ChaCha20</a>
-            <a href="../bench_processor/Rsa.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">RSA</a>
-            <a href="../bench_processor/Ecc.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">ECC</a>
-            <a href="../bench_processor/Sha256.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">SHA-256</a>
-            <a href="../bench_processor/Sha3.html" class="p-4 border rounded-lg bg-white shadow-md hover:bg-gray-200">SHA-3</a>
+<body class="font-sans bg-gray-900 text-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-4xl w-full px-6 sm:px-8 py-10 text-center">
+        <h1 class="text-3xl font-extrabold text-white mb-6">Benchmarking Based on Processor</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="../bench_processor/Aes.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">AES-128</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
+            <a href="../bench_processor/Chacha.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">ChaCha20</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
+            <a href="../bench_processor/Rsa.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">RSA</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
+            <a href="../bench_processor/Ecc.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">ECC</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
+            <a href="../bench_processor/Sha256.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">SHA-256</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
+            <a href="../bench_processor/Sha3.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                <h3 class="text-xl font-semibold text-white">SHA-3</h3>
+                <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
+            </a>
         </div>
     </div>
 </body>

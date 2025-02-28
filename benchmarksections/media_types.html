@@ -3,9 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Benchmark Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-   MEDIATYPES
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center">
+    
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-3xl md:text-4xl font-bold text-center">Benchmark Based on Media Types</h1>
+        <p class="text-center text-gray-400 mb-6">Choose a metric to view its graph</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row justify-center items-start gap-8 w-full px-4 md:px-12">
+        <!-- Graph Section -->
+        <div class="max-w-4xl w-full">
+            <canvas id="benchmarkChart" class="w-full rounded-lg shadow-lg"></canvas>
+        </div>
+
+        <!-- Control Panel Section -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full md:w-80 sticky top-10">
+            <h2 class="text-xl font-semibold mb-4">Select Benchmark Metric</h2>
+            <ul class="space-y-2">
+                <li id="encryptionTime" onclick="updateChart('Encryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-red-500">Encryption Time</li>
+                <li id="decryptionTime" onclick="updateChart('Decryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-blue-500">Decryption Time</li>
+                <li id="executionTime" onclick="updateChart('Execution Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-green-500">Execution Time</li>
+                <li id="memoryConsumed" onclick="updateChart('Memory Consumed', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-purple-500">Memory Consumed</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="w-full bg-gray-800 text-gray-400 text-center py-4 mt-6">
+        &copy; 2025 Benchmark Framework | All Rights Reserved.
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('benchmarkChart').getContext('2d');
+
+        const datasets = {
+            "Encryption Time": {
+                label: "Encryption Time",
+                borderColor: "red",
+                backgroundColor: "rgba(255,0,0,0.2)",
+                data: [2, 8, 6, 7, 5]
+            },
+            "Decryption Time": {
+                label: "Decryption Time",
+                borderColor: "blue",
+                backgroundColor: "rgba(0,0,255,0.2)",
+                data: [1.5, 7, 5.5, 6, 4.5]
+            },
+            "Execution Time": {
+                label: "Execution Time",
+                borderColor: "green",
+                backgroundColor: "rgba(0,255,0,0.2)",
+                data: [1, 6, 5, 5.5, 4]
+            },
+            "Memory Consumed": {
+                label: "Memory Consumed",
+                borderColor: "purple",
+                backgroundColor: "rgba(128,0,128,0.2)",
+                data: [3, 9, 7, 8, 6]
+            }
+        };
+
+        const chartConfig = {
+            type: 'line',
+            data: {
+                labels: ['Text', 'Video', 'Image', 'PDF', 'MP3'],
+                datasets: [datasets["Encryption Time"]] // Default dataset
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4,
+                        borderWidth: 3,
+                    },
+                    point: {
+                        radius: 5,
+                        hitRadius: 10,
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#f5f5f5',
+                            font: {
+                                size: 14,
+                            }
+                        }
+                    },
+                }
+            }
+        };
+
+        let myChart = new Chart(ctx, chartConfig);
+
+        function updateChart(metric, liElement) {
+            myChart.data.datasets = [datasets[metric]];
+            myChart.update();
+
+            document.querySelectorAll('.control-panel li').forEach(item => item.classList.remove('text-white'));
+            liElement.classList.add('text-white');
+        }
+    </script>
 </body>
 </html>
