@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChaCha20 Benchmark</title>
+    <title>AES-CBC Benchmark</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans bg-gray-900 text-gray-100">
     <div class="max-w-5xl mx-auto px-6 sm:px-8 py-10">
         <header class="text-center mb-10">
-            <h1 class="text-4xl font-extrabold text-white mb-4">ChaCha20 Encryption</h1>
+            <h1 class="text-4xl font-extrabold text-white mb-4">AES-CBC (256-bit Key) Encryption</h1>
             <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-               
+                AES (Advanced Encryption Standard) in Cipher Block Chaining (CBC) mode encrypts data in fixed-size blocks. Each block is XORed with the previous one for enhanced security.
             </p>
         </header>
 
         <section class="bg-gray-800 p-6 rounded-lg shadow-md mb-10">
-            <h2 class="text-2xl font-semibold text-white mb-4">Help Us Benchmark ChaCha20</h2>
-            <p class="text-gray-300 mb-4">Select a file size and click "Run Benchmark" to test ChaCha20 encryption and decryption performance.</p>
+            <h2 class="text-2xl font-semibold text-white mb-4">Help Us Benchmark AES-CBC (256 Bit Key)</h2>
+            <p class="text-gray-300 mb-4">Select a file size and click "Run Benchmark" to test AES-CBC (256 Bit Key) encryption and decryption performance.</p>
             <div class="flex flex-col sm:flex-row gap-4 items-center">
                 <label for="fileSize" class="text-gray-300 text-lg">Choose a file size:</label>
                 <select id="fileSize" class="p-2 rounded-lg bg-gray-700 text-white w-full sm:w-1/5">

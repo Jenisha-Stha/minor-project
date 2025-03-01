@@ -3,147 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benchmarking on the Basis of Processors</title>
-    <style>
-        /* Custom Styles for Dark Theme */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a1a1a; /* Dark background */
-            color: #f5f5f5; /* Light text */
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #f5f5f5;
-        }
-
-        /* Table Styling */
-        table {
-            width: 90%;
-            margin: 40px auto;
-            border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for a professional look */
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: center;
-            border: 1px solid #444; /* Border color */
-        }
-
-        th {
-            background-color: #333;
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        td {
-            background-color: #444;
-            color: #ddd;
-            font-size: 1rem;
-        }
-
-        tr:nth-child(even) td {
-            background-color: #555; /* Alternate row colors */
-        }
-
-        tr:hover td {
-            background-color: #666; /* Highlight rows on hover */
-        }
-
-        /* Footer Style */
-        .footer {
-            background-color: #111;
-            color: #ddd;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            table {
-                width: 100%;
-                font-size: 0.9rem;
-            }
-
-            th, td {
-                padding: 10px;
-            }
-        }
-
-    </style>
+    <title>Benchmarking Based on Strength</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans bg-gray-900 text-gray-100">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 py-10">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-white mb-4">Benchmarking Based on Strength</h1>
+        </header>
 
-    <h1>Benchmarking on the Basis of Processors</h1>
-    
-    <table>
-        <tr>
-            <th>Processor</th>
-            <th>OS</th>
-            <th>File Size</th>
-            <th>Encryption Time</th>
-            <th>Decryption Time</th>
-            <th>Execution Time</th>
-        </tr>
-        <tr>
-            <td rowspan="3">Intel i7 10510U</td>
-            <td rowspan="3">Ubuntu</td>
-            <td>5 MB</td>
-            <td>100 ms</td>
-            <td>50 ms</td>
-            <td>150 ms</td>
-        </tr>
-        <tr>
-            <td>100 MB</td>
-            <td>500 ms</td>
-            <td>250 ms</td>
-            <td>750 ms</td>
-        </tr>
-        <tr>
-            <td>500 MB</td>
-            <td>2000 ms</td>
-            <td>1000 ms</td>
-            <td>3000 ms</td>
-        </tr>
-        <tr>
-            <td rowspan="2">Intel i5</td>
-            <td rowspan="2">Windows 11</td>
-            <td>100 MB</td>
-            <td>700 ms</td>
-            <td>350 ms</td>
-            <td>1050 ms</td>
-        </tr>
-        <tr>
-            <td>500 MB</td>
-            <td>2500 ms</td>
-            <td>1250 ms</td>
-            <td>3750 ms</td>
-        </tr>
-    </table>
+        <section>
+            <div class="overflow-x-auto">
+                <table class="w-full border border-gray-700 text-left text-gray-300">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="p-3 border border-gray-700">S.No</th>
+                            <th class="p-3 border border-gray-700">Performance Parameter</th>
+                            <th class="p-3 border border-gray-700">AES-CBC 128</th>
+                            <th class="p-3 border border-gray-700">AES-CBC 256</th>
+                            <th class="p-3 border border-gray-700">AES-GCM 128</th>
+                            <th class="p-3 border border-gray-700">AES-GCM 256</th>
+                            <th class="p-3 border border-gray-700">ChaCha20</th>
+                            <th class="p-3 border border-gray-700">ChaCha-Poly</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-gray-800">
+                            <td class="p-3 border border-gray-700">1</td>
+                            <td class="p-3 border border-gray-700">Avalanche Effect (%)</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3 border border-gray-700">2</td>
+                            <td class="p-3 border border-gray-700">Bit Independence</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3 border border-gray-700">3</td>
+                            <td class="p-3 border border-gray-700">Correlation Coefficient</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3 border border-gray-700">4</td>
+                            <td class="p-3 border border-gray-700">Entropy Ciphertext</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                        </tr>
+                        <tr class="bg-gray-800">
+                            <td class="p-3 border border-gray-700">5</td>
+                            <td class="p-3 border border-gray-700">Key Size</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                            <td class="p-3 border border-gray-700">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 Benchmark Framework | All Rights Reserved.</p>
+    <footer class="bg-gray-950 text-center py-5 text-gray-400 mt-10">
+        <p>&copy; 2025 Universal Framework | All rights reserved.</p>
     </footer>
-
 </body>
 </html>

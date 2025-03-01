@@ -23,32 +23,32 @@
                     <h3 class="text-xl font-semibold text-white">AES-CBC</h3>
                     <p class="text-gray-400">Advanced Encryption Standard in Cipher Block Chaining mode.</p>
                 </a>
-                <a href="algorithms/chacha.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold text-white">ChaCha20</h3>
-                    <p class="text-gray-400">A secure stream cipher used in various applications.</p>
+                <a href="algorithms/kyberChacha.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold text-white">AES-CBC (256 Bit Key )</h3>
+                    <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
                 </a>
                 <a href="algorithms/aes_gcm.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
                     <h3 class="text-xl font-semibold text-white">AES-GCM</h3>
                     <p class="text-gray-400">AES in Galois/Counter Mode, widely used for secure communications.</p>
                 </a>
+                <a href="algorithms/kyberaes.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold text-white">AES-GCM (256 Bit Key)</h3>
+                    <p class="text-gray-400">A hybrid approach combining lattice-based cryptography with AES-GCM.</p>
+                </a>
+                <a href="algorithms/chacha.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold text-white">ChaCha20</h3>
+                    <p class="text-gray-400">A secure stream cipher used in various applications.</p>
+                </a>
                 <a href="algorithms/chacha_poly.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
                     <h3 class="text-xl font-semibold text-white">ChaCha20-Poly</h3>
                     <p class="text-gray-400">Combines ChaCha20 and Poly1305 for authenticated encryption.</p>
-                </a>
-                <a href="algorithms/kyberaes.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold text-white">Kyber and AES-GCM</h3>
-                    <p class="text-gray-400">A hybrid approach combining lattice-based cryptography with AES-GCM.</p>
-                </a>
-                <a href="algorithms/kyberChacha.html" class="p-6 border rounded-lg shadow-md bg-gray-800 hover:bg-gray-700 transition-transform transform hover:-translate-y-1 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold text-white">Kyber and ChaCha20</h3>
-                    <p class="text-gray-400">Combines quantum-safe encryption with a fast stream cipher.</p>
-                </a>
+                </a>     
             </div>
         </section>
 
         <section>
             <h2 class="text-2xl font-semibold text-white mb-6">Benchmark Categories</h2>
-            <div class="flex flex-col lg:flex-row justify-between gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 justify-between gap-6">
                 <a href="benchmarksections/media_types.html" class="p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 hover:bg-gray-700 flex-1 flex items-center justify-between transition-transform transform hover:-translate-y-1 hover:shadow-lg">
                     <div>
                         <h3 class="text-xl font-semibold text-white mb-2">Benchmark Based on Media Types</h3>
@@ -74,6 +74,15 @@
                     </div>
                     <div class="text-4xl text-white">
                         <i class="fas fa-shield-alt"></i>
+                    </div>
+                </a>
+                <a href="benchmarksections/processors.html" class="p-6 border border-gray-700 rounded-lg shadow-lg bg-gray-800 hover:bg-gray-700 flex-1 flex items-center justify-between transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Post-Qauntam cryptography</h3>
+                        <p class="text-gray-400">Analyze performance across different processor architectures.</p>
+                    </div>
+                    <div class="text-4xl text-white">
+                        <i class="fas fa-microchip"></i>
                     </div>
                 </a>
             </div>

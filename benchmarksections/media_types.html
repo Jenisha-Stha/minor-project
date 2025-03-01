@@ -27,7 +27,6 @@
                 <li id="encryptionTime" onclick="updateChart('Encryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-red-500">Encryption Time</li>
                 <li id="decryptionTime" onclick="updateChart('Decryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-blue-500">Decryption Time</li>
                 <li id="executionTime" onclick="updateChart('Execution Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-green-500">Execution Time</li>
-                <li id="memoryConsumed" onclick="updateChart('Memory Consumed', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-purple-500">Memory Consumed</li>
             </ul>
         </div>
     </div>
@@ -57,19 +56,13 @@
                 borderColor: "green",
                 backgroundColor: "rgba(0,255,0,0.2)",
                 data: [1, 6, 5, 5.5, 4]
-            },
-            "Memory Consumed": {
-                label: "Memory Consumed",
-                borderColor: "purple",
-                backgroundColor: "rgba(128,0,128,0.2)",
-                data: [3, 9, 7, 8, 6]
             }
         };
 
         const chartConfig = {
             type: 'line',
             data: {
-                labels: ['Text', 'Video', 'Image', 'PDF', 'MP3'],
+                labels: ['Aes', 'Aes-cbc', 'Aes-gcm', 'Aes-gcm256', 'chacha-20', 'chacha20-Poly'],
                 datasets: [datasets["Encryption Time"]] // Default dataset
             },
             options: {
