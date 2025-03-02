@@ -1,110 +1,144 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benchmark Comparison</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Benchmark Comparison</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center">
+        
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-center">Benchmark Based on Media Types</h1>
+            <p class="text-center text-gray-400 mb-6">Choose a benchmark metric to view its graph</p>
+        </div>
     
-    <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl md:text-4xl font-bold text-center">Benchmark Based on Media Types</h1>
-        <p class="text-center text-gray-400 mb-6">Choose a metric to view its graph</p>
-    </div>
-
-    <div class="flex flex-col lg:flex-row justify-center items-start gap-8 w-full px-4 md:px-12">
-        <!-- Graph Section -->
-        <div class="max-w-4xl w-full">
-            <canvas id="benchmarkChart" class="w-full rounded-lg shadow-lg"></canvas>
+        <div class="flex flex-col lg:flex-row justify-center items-start gap-8 w-full px-4 md:px-12">
+            <!-- Graph Section -->
+            <div class="max-w-4xl w-full">
+                <canvas id="benchmarkChart" class="w-full rounded-lg shadow-lg"></canvas>
+            </div>
+    
+            <!-- Control Panel Section -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full md:w-80 sticky top-10">
+                <h2 class="text-xl font-semibold mb-4">Select Benchmark Metric</h2>
+                <ul class="space-y-2">
+                    <li id="encrypted" onclick="updateChart('Encrypted', this)" class="p-3 bg-yellow-500 rounded-md cursor-pointer hover:bg-yellow-400 text-black">Encrypted</li>
+                    <li id="decrypted" onclick="updateChart('Decrypted', this)" class="p-3 bg-blue-500 rounded-md cursor-pointer hover:bg-blue-400 text-black">Decrypted</li>
+                    <li id="execution" onclick="updateChart('Execution', this)" class="p-3 bg-red-500 rounded-md cursor-pointer hover:bg-red-400 text-black">Execution</li>
+                </ul>
+            </div>
         </div>
-
-        <!-- Control Panel Section -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full md:w-80 sticky top-10">
-            <h2 class="text-xl font-semibold mb-4">Select Benchmark Metric</h2>
-            <ul class="space-y-2">
-                <li id="encryptionTime" onclick="updateChart('Encryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-red-500">Encryption Time</li>
-                <li id="decryptionTime" onclick="updateChart('Decryption Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-blue-500">Decryption Time</li>
-                <li id="executionTime" onclick="updateChart('Execution Time', this)" class="p-3 bg-gray-700 rounded-md cursor-pointer hover:bg-gray-600 text-green-500">Execution Time</li>
-            </ul>
-        </div>
-    </div>
-
-    <footer class="w-full bg-gray-800 text-gray-400 text-center py-4 mt-6">
-        &copy; 2025 Benchmark Framework | All Rights Reserved.
-    </footer>
-
-    <script>
-        const ctx = document.getElementById('benchmarkChart').getContext('2d');
-
-        const datasets = {
-            "Encryption Time": {
-                label: "Encryption Time",
-                borderColor: "red",
-                backgroundColor: "rgba(255,0,0,0.2)",
-                data: [2, 8, 6, 7, 5]
-            },
-            "Decryption Time": {
-                label: "Decryption Time",
-                borderColor: "blue",
-                backgroundColor: "rgba(0,0,255,0.2)",
-                data: [1.5, 7, 5.5, 6, 4.5]
-            },
-            "Execution Time": {
-                label: "Execution Time",
-                borderColor: "green",
-                backgroundColor: "rgba(0,255,0,0.2)",
-                data: [1, 6, 5, 5.5, 4]
-            }
-        };
-
-        const chartConfig = {
-            type: 'line',
-            data: {
-                labels: ['Aes', 'Aes-cbc', 'Aes-gcm', 'Aes-gcm256', 'chacha-20', 'chacha20-Poly'],
-                datasets: [datasets["Encryption Time"]] // Default dataset
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+    
+        <footer class="w-full bg-gray-800 text-gray-400 text-center py-4 mt-6">
+            &copy; 2025 Benchmark Framework | All Rights Reserved.
+        </footer>
+    
+        <script>
+            const ctx = document.getElementById('benchmarkChart').getContext('2d');
+    
+            // Define datasets for each benchmark metric (Encrypted, Decrypted, Execution, Memory)
+            const datasets = {
+                "Encrypted": {
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.018384, 0.039922 ,  0.013131, 0.009792, 0.014149 ,0.016363] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [0.014811, 0.035367, 0.013794, 0.007564, 0.014589,0.016451] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data:[0.015399, 0.037915, 0.066, 0.045, 0.032,0.001] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.04, 0.077, 0.016, 0.065, 0.032,0.001] }
                 },
-                elements: {
-                    line: {
-                        tension: 0.4,
-                        borderWidth: 3,
-                    },
-                    point: {
-                        radius: 5,
-                        hitRadius: 10,
-                    }
+                "Decrypted": {
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [2, 5.5, 4.2, 4.8, 3.9] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [2.2, 7.2, 5.8, 6, 5.1] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [3, 8.5, 7.2, 6.5, 5.8] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [1.8, 6.7, 5.9, 6.2, 5] }
                 },
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            color: '#f5f5f5',
-                            font: {
-                                size: 14,
-                            }
+                "Execution": {
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [1, 5, 4, 4.5, 3.8] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [1.7, 6.5, 5.2, 5.8, 5.4] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [2, 7, 6, 6.2, 5.6] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [1.2, 5.8, 5.1, 5.5, 4.6] }
+                },
+                "Memory": {
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.5, 2.1, 1.8, 2, 1.5] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [1, 2.5, 2.2, 2.4, 2] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [1.2, 3, 2.5, 2.6, 2.3] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.8, 2.3, 2.1, 2.2, 1.9] }
+                }
+            };
+    
+            // Initial chart configuration (Empty graph)
+            const chartConfig = {
+                type: 'line',
+                data: {
+                    labels: ['Aes-cbc 128','Aes-cbc 256', 'Aes-gcm', 'Aes-gcm256', 'chacha-20' ,'chacha-20 poly'], // Add labels as necessary
+                    datasets: Object.values(datasets["Encrypted"]) // Default: Encrypted metric with all four media types
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
                         }
                     },
+                    elements: {
+                        line: {
+                            tension: 0.4,
+                            borderWidth: 3,
+                        },
+                        point: {
+                            radius: 5,
+                            hitRadius: 10,
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#f5f5f5',
+                                font: {
+                                    size: 14,
+                                }
+                            }
+                        },
+                    }
+                }
+            };
+    
+            let myChart = new Chart(ctx, chartConfig);
+    
+            // Function to update chart with selected metric and all media types
+            function updateChart(metric, liElement) {
+                // Set chart datasets based on the selected metric (Encrypted, Decrypted, Execution, Memory)
+                myChart.data.datasets = Object.values(datasets[metric]);
+                myChart.update();
+    
+                // Reset all button styles
+                document.querySelectorAll('.control-panel li').forEach(item => {
+                    item.classList.remove('text-white', 'bg-yellow-600', 'bg-blue-600', 'bg-red-600', 'bg-green-600');
+                    item.classList.add('text-black');
+                });
+    
+                // Highlight the selected button with a distinct color
+                liElement.classList.add('text-white', getButtonColorClass(metric));
+            }
+    
+            // Function to get the button color class based on the selected metric
+            function getButtonColorClass(metric) {
+                switch (metric) {
+                    case "Encrypted":
+                        return 'bg-yellow-600';
+                    case "Decrypted":
+                        return 'bg-blue-600';
+                    case "Execution":
+                        return 'bg-red-600';
+                    case "Memory":
+                        return 'bg-green-600';
+                    default:
+                        return '';
                 }
             }
-        };
-
-        let myChart = new Chart(ctx, chartConfig);
-
-        function updateChart(metric, liElement) {
-            myChart.data.datasets = [datasets[metric]];
-            myChart.update();
-
-            document.querySelectorAll('.control-panel li').forEach(item => item.classList.remove('text-white'));
-            liElement.classList.add('text-white');
-        }
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
+    
