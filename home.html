@@ -6,9 +6,84 @@
     <title>Universal Framework</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles from skeleton + modern enhancements */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a, #6b7280);
+        }
+        .hover-transform {
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Stronger base shadow */
+        }
+        .hover-transform:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Darker and larger hover shadow */
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Logo-specific styles */
+        .logo-modern {
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+        .logo-modern:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+        }
+        /* Header styles */
+        header {
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+        }
+        header.hidden {
+            transform: translateY(-100%);
+        }
+    </style>
+
 </head>
-<body class="font-sans bg-gray-900 text-gray-100">
+<body class="font-sans bg-gray-700 text-gray-100">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 py-10">
+         <!-- Header Section (Filled with Logo, Title, and Navbar) -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
+            <!-- Logo and Title (Left Side, Non-Clickable) -->
+            <div class="flex items-center space-x-2">
+                <img src="https://img.icons8.com/ios-filled/150/ffffff/lock.png" alt="PACE Logo" 
+                     class="w-8 h-8 md:w-10 md:h-10 logo-modern">
+                <span class="text-2xl font-semibold text-white">PACE</span>
+            </div>
+            <!-- Navigation (Right Side) -->
+            <nav class="flex items-center space-x-6">
+                <a href="#algorithms" class="text-lg text-gray-200 hover:text-white transition-colors">Algorithms</a>
+                <a href="#benchmark-categories" class="text-lg text-gray-200 hover:text-white transition-colors">Benchmarks</a>
+                <a href="#" class="text-lg text-gray-200 hover:text-white transition-colors">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Reduced Size -->
+    <div class="gradient-bg text-white py-12 pt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 text-center fade-in">
+            <header>
+                <!-- Logo -->
+                <img src="https://img.icons8.com/ios-filled/150/ffffff/lock.png" alt="Cryptographic Framework Logo" 
+                     class="mx-auto mb-4 w-20 h-20 md:w-24 md:h-24 logo-modern">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Platform for Algorithmic Cryptographic Evaluation</h1>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Measure, Compare and Evaluate Cryptographic Algorithms. A Unified Platform for Performance Benchmarking and Security Evaluation.
+                </p>
+            </header>
+            <a href="#algorithms" class="inline-block mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition-colors">
+                Get Started
+            </a>
+        </div>
+    </div>
+
         <header class="text-center mb-10">
             <h1 class="text-4xl font-extrabold text-white mb-4">Universal Framework to Benchmark Cryptographic Algorithms</h1>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto">

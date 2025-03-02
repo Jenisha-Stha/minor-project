@@ -32,10 +32,7 @@
             </div>
         </div>
     
-        <footer class="w-full bg-gray-800 text-gray-400 text-center py-4 mt-6">
-            &copy; 2025 Benchmark Framework | All Rights Reserved.
-        </footer>
-    
+       
         <script>
             const ctx = document.getElementById('benchmarkChart').getContext('2d');
     
@@ -44,27 +41,22 @@
                 "Encrypted": {
                     "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.018384, 0.039922 ,  0.013131, 0.009792, 0.014149 ,0.016363] },
                     "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [0.014811, 0.035367, 0.013794, 0.007564, 0.014589,0.016451] },
-                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data:[0.015399, 0.037915, 0.066, 0.045, 0.032,0.001] },
-                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.04, 0.077, 0.016, 0.065, 0.032,0.001] }
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data:[0.015399, 0.037915, 0.014671, 0.007492, 0.015731, 0.017023] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.013004, 0.031862, 0.015291, 0.007575, 0.016044, 0.017839] }
                 },
                 "Decrypted": {
-                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [2, 5.5, 4.2, 4.8, 3.9] },
-                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [2.2, 7.2, 5.8, 6, 5.1] },
-                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [3, 8.5, 7.2, 6.5, 5.8] },
-                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [1.8, 6.7, 5.9, 6.2, 5] }
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.008790, 0.017024, 0.012813, 0.008720, 0.015193, 0.015566] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [0.007125, 0.012245, 0.014383, 0.008000, 0.015218, 0.016618] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [0.007276, 0.013430, 0.015147, 0.008742, 0.016406, 0.016831] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.006376, 0.011087, 0.015935, 0.007986, 0.015955, 0.016365] }
                 },
                 "Execution": {
-                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [1, 5, 4, 4.5, 3.8] },
-                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [1.7, 6.5, 5.2, 5.8, 5.4] },
-                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [2, 7, 6, 6.2, 5.6] },
-                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [1.2, 5.8, 5.1, 5.5, 4.6] }
+                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.108244, 0.165077, 0.025957, 0.018522, 0.029369, 0.180552
+                    ] },
+                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [0.066776, 0.152364, 0.028188, 0.015571, 0.029835, 0.205643] },
+                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [0.068493, 0.165813, 0.029829, 0.016240, 0.032163, 0.206672] },
+                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.063947, 0.142963, 0.031235, 0.007986, 0.032029, 0.189680] }
                 },
-                "Memory": {
-                    "Text": { label: "Text", borderColor: "yellow", backgroundColor: "rgba(255,255,0,0.2)", data: [0.5, 2.1, 1.8, 2, 1.5] },
-                    "Image": { label: "Image", borderColor: "blue", backgroundColor: "rgba(0,0,255,0.2)", data: [1, 2.5, 2.2, 2.4, 2] },
-                    "MP3": { label: "MP3", borderColor: "red", backgroundColor: "rgba(255,0,0,0.2)", data: [1.2, 3, 2.5, 2.6, 2.3] },
-                    "MP4": { label: "MP4", borderColor: "green", backgroundColor: "rgba(0,255,0,0.2)", data: [0.8, 2.3, 2.1, 2.2, 1.9] }
-                }
             };
     
             // Initial chart configuration (Empty graph)

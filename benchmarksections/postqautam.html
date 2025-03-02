@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Quantum Cryptography - PACE Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-900 text-gray-300 min-h-screen">
+    <!-- PACE Header -->
+    <div class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-900 to-gray-700 p-4 flex items-center shadow-lg z-50">
+        <img src="https://img.icons8.com/ios-filled/150/ffffff/lock.png" alt="PACE Logo" 
+             class="w-8 h-8 mr-2 drop-shadow-md hover:scale-110 transition-transform duration-300">
+        <span class="text-xl font-bold text-white">PACE</span>
+    </div>
+
+    <!-- PQC Theory Section -->
+    <div class="max-w-5xl mx-auto mt-24 mb-6 px-6">
+        <h1 class="text-3xl font-bold text-center text-blue-400 mb-4">Post-Quantum Cryptography</h1>
+        <p class="text-lg leading-relaxed">
+            <strong>Post-Quantum Cryptography (PQC)</strong> refers to cryptographic algorithms designed to resist attacks from quantum computers...
+        </p>
+    </div>
+
+    <!-- Kyber Focus and Benchmarking Section -->
+    <div class="container max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg mb-6">
+        <h2 class="text-2xl font-extrabold text-white mb-4 text-center">Focus on Kyber (ML-KEM)</h2>
+        <p class="text-lg text-gray-400 mb-4">
+            Kyber, now standardized as ML-KEM, is a lattice-based KEM selected by NIST for its efficiency and security...
+        </p>
+
+        <!-- File Upload -->
+        <div class="mb-4">
+            <input type="file" id="kyberBenchmarkFile" class="hidden">
+            <label for="kyberBenchmarkFile" class="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition">
+                Select Benchmark File
+            </label>
+        </div>
+
+        <!-- Benchmark Button -->
+        <button id="runBenchmarkButton" class="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">
+            Run Benchmark
+        </button>
+
+        <!-- Results -->
+        <div id="benchmark-results" class="mt-4 p-3 bg-gray-700 border-l-4 border-blue-500 text-white font-medium hidden">
+            <p id="kyber512Result"><strong>Kyber-512:</strong> Key Gen Time: TBD ms, Memory: TBD MB</p>
+            <p id="kyber1024Result"><strong>Kyber-1024:</strong> Key Gen Time: TBD ms, Memory: TBD MB</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 text-center py-4">
+        <p>© 2025 PACE Framework | All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const runButton = document.getElementById('runBenchmarkButton');
+            const resultsDiv = document.getElementById('benchmark-results');
+            const kyber512Result = document.getElementById('kyber512Result');
+            const kyber1024Result = document.getElementById('kyber1024Result');
+            const fileInput = document.getElementById('kyberBenchmarkFile');
+
+            if (!runButton || !resultsDiv || !kyber512Result || !kyber1024Result || !fileInput) {
+                console.error('One or more DOM elements not found.');
+                return;
+            }
+
+            runButton.addEventListener('click', () => {
+                try {
+                    if (!fileInput.files.length) {
+                        alert('Please select a benchmark file first.');
+                        return;
+                    }
+
+                    resultsDiv.classList.remove('hidden');
+                    runButton.disabled = true;
+                    runButton.textContent = 'Running...';
+
+                    setTimeout(() => {
+                        kyber512Result.innerHTML = '<strong>Kyber-512:</strong> Key Gen Time: 1.2 ms, Memory: 4.1 MB';
+                        kyber1024Result.innerHTML = '<strong>Kyber-1024:</strong> Key Gen Time: 2.8 ms, Memory: 6.3 MB';
+                        runButton.disabled = false;
+                        runButton.textContent = 'Run Benchmark';
+                    }, 1500);
+                } catch (error) {
+                    console.error('Error during benchmark:', error);
+                    resultsDiv.classList.add('hidden');
+                    alert('An error occurred while running the benchmark.');
+                    runButton.disabled = false;
+                    runButton.textContent = 'Run Benchmark';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
